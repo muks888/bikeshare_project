@@ -7,8 +7,8 @@ on:
 
 jobs:
   train:
-    #runs-on: ubuntu-latest
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
+    #runs-on: self-hosted
     strategy:
       fail-fast: false
     steps:
@@ -29,8 +29,8 @@ jobs:
 
   test:
     needs: train
-    #runs-on: ubuntu-latest
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
+    #runs-on: self-hosted
     strategy:
       fail-fast: false
     steps:
@@ -50,8 +50,8 @@ jobs:
 
   build:
     needs: [train, test]
-    #runs-on: ubuntu-latest
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
+    #runs-on: self-hosted
     strategy:
       fail-fast: false
     steps:
@@ -76,8 +76,8 @@ jobs:
 
   push-image:
     needs: [train, test, build]
-    #runs-on: ubuntu-latest
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
+    #runs-on: self-hosted
     steps:
     - name: Repo Checkout
       uses: actions/checkout@v2
