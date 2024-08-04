@@ -3,14 +3,10 @@ on:
   push:
     branches:
       - main
-  #workflow_dispatch:
+  workflow_dispatch:
 
 jobs:
-
-
-
- deploy:
-      #needs: [train, test, build, push-image]
+  deploy:
     runs-on: self-hosted
     steps:
     - name: Pull Docker Image
