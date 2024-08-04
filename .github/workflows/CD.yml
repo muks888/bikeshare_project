@@ -13,15 +13,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Pull Docker Image
-        env: 
-          DOCKER_USER: ${{ secrets.DOCKER_USER_NAME }}
-        run: sudo docker rmi images rmuks/bikeshare-fastapi:latest
+      
     
       - name: Stop Old Docker Container
         run: sudo docker stop bikeshare-fastapi-container
 
       - name: Delete Old Docker Container  
         run: sudo docker rm bikeshare-fastapi-container
+
+
+      - name: Pull Docker Image
+        env: 
+          DOCKER_USER: ${{ secrets.DOCKER_USER_NAME }}
+        run: sudo docker image rm rmuks/bikeshare-fastapi:latest
     
       
