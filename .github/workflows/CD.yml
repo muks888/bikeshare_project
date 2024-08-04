@@ -15,12 +15,7 @@ jobs:
     steps:
       
     
-      - name: Stop Old Docker Container
-        run: sudo docker stop bikeshare-fastapi-container
-
-      - name: Delete Old Docker Container  
-        run: sudo docker rm bikeshare-fastapi-container
-
+     
 
       - name: Pull Docker Image
         env: 
