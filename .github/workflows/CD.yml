@@ -19,7 +19,6 @@ jobs:
 
       - name: Pull Docker Image
         env: 
-          DOCKER_USER: ${{ secrets.DOCKER_USER_NAME }}
-        run: sudo docker image rm rmuks/bikeshare-fastapi:latest
+         run: sudo docker rmi $(docker images -q)
     
       
