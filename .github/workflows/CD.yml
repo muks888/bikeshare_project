@@ -13,12 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      
-    
-     
-
       - name: Pull Docker Image
-        env: 
-         run: sudo docker rmi $(docker images -q)
+        run: sudo docker rmi $(docker images -q)
     
       
